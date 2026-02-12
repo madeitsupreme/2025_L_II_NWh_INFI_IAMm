@@ -7,7 +7,7 @@ deps:
 lint:
 	@echo "Running linter..."
 	flake8 hello_world test
-test:
+test: lint
 	@echo "Running tests..."
 	PYTHONPATH=. python3 -m pytest -v
 
