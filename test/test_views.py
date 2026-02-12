@@ -14,8 +14,10 @@ class FlaskrTestCase(unittest.TestCase):
         ','.join(SUPPORTED) in s
 
     def test_msg_with_output(self):
-        rv = self.app.get('/?output=json')
-        self.assertEqual(b'{
+    rv = self.app.get('/?output=json')
+    data = json.loads(rv.data)  # parse JSON from response
+    expected = {
         "imie": "Dominik",
         "msg": "Hello World!"
-        }', rv.data)
+    }
+    self.assertEqual(data, expected)
