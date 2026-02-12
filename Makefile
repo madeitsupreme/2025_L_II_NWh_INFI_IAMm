@@ -9,7 +9,7 @@ lint:
 	flake8 hello_world test
 test:
 	@echo "Running tests..."
-	PYTHONPATH=. pytest -v
+	PYTHONPATH=. python3 -m pytest -v
 
 run:
 	@echo "Running application..."
